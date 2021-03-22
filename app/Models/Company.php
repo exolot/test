@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Company extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -13,15 +13,13 @@ class User extends Model
      */
     protected $fillable = [
         'name',
-        'age'
+        'user_id',
+        'started_at'
     ];
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function comments()
+    public function user()
     {
-        return $this->hasMany(Company::class);
+        return $this->hasOne(User::class);
     }
 
 }
