@@ -12,6 +12,7 @@ class User extends Model
      * @var array
      */
     protected $fillable = [
+        'user_id',
         'name',
         'age'
     ];
@@ -19,7 +20,7 @@ class User extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function comments()
+    public function companies()
     {
         return $this->hasMany(Company::class);
     }

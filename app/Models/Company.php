@@ -12,6 +12,7 @@ class Company extends Model
      * @var array
      */
     protected $fillable = [
+        'company_id',
         'name',
         'user_id',
         'started_at'
@@ -19,7 +20,7 @@ class Company extends Model
 
     public function user()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
 
 }
